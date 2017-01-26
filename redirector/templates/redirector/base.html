@@ -1,0 +1,84 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sito</title>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    </head>
+    <body>
+    <div class="logo-container center">
+        <img  class="logo" src="{% static 'logo/logo.svg' %}" alt="Kiwi standing on oval">
+    </div>
+        <div class="section no-pad-bot" id="index-banner">
+            <div class="container">
+                <br><br>
+                <div class="row center">
+                    <div class="header">
+                        <div class="col s12 m12 l12 form ">
+                            {% block content %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section sec-card blue darken-2">
+                <dir class="container ">
+                <div class="row center ">
+                    <div class="col s12 m12 l12">
+                        <div class="card blue darken-1">
+                            <div class="card-content white-text">
+                                <span class="card-title"><h4>Why Squeezator?</h4></span>
+                                <h5 class="left-text">We don't track you</h5>
+                                <p class="left-text body-p">Can believe us, we get only your url and make a shortner and beautifull link<p>
+                                    <p>
+                                        <h5 class="left-text">
+                                        What we save?
+                                        </h5>
+                                        <p class="left-text body-p">
+                                            We store your url and our shrinked code, no more, no less.<br>
+                                            No information like, date, ip, viewed times.
+                                        </p>
+                                        <h5 class="left-text">
+                                        Why this trasparency?
+                                        </h5>
+                                        <p class="left-text body-p">We believe in opensource and trasparency, all code is opensource on Github, you can read it, improve it, love it!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section red darken-2 ">
+                    <dir class="container">
+                    <div class="row center ">
+                        <div class="col s12 m12 l12">
+                            <div class="card red">
+                                <div class="card-content white-text">
+                                    <span class="card-title"><h4>Django</h4></span>
+                                    <h5 class="left-text">Make Squozy yours</h5>
+                                    <p class="left-text body-p">Squozy is developed with django, you can expand it and make your personal shrinker<p>
+                                        <p>
+                                            <h5 class="left-text">
+                                            How i can?
+                                            </h5>
+                                            <p class="left-text body-p">
+                                                Fork it on github, clone and start to implement your awesome feature!
+                                            </p>
+                                            <h5 class="left-text">
+                                            Issue?
+                                            </h5>
+                                            <p class="left-text body-p">Contact me at fagioli.giulio@gmail.com or better open an issue on github</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+            </html>

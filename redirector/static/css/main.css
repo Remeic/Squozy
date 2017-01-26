@@ -1,0 +1,46 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    padding: 0px;
+}
+
+.form_middle > input{
+    width: 80%;
+
+}
+ .left-text{
+    text-align: left;
+
+ }
+
+ p{
+    font-size: 1.2em;
+ }
+
+ .body-p{
+    padding-left: 2%;
+ }
+
+.sec-card{
+    margin-top: 0%;
+}
+
+.class{
+    padding: 0px;
+    margin: 0px;
+}
+
+.no_padding{
+    padding: 0px;
+    margin:0px;
+}
+
+.logo{
+    width: 30%;
+}
+
+.logo-container{
+    margin-top: 5%;
+}

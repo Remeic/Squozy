@@ -1,0 +1,9 @@
+{% extends 'redirector/base.html' %}
+{% block content %}
+<span class="form_middle">
+    <form method="POST" class="black-text">{% csrf_token %}
+        {{ form.as_p }}
+        <button  class="waves-effect waves-light btn blue" type="submit">Squeeze!</button>
+    </form>
+</span>
+{% endblock %}

@@ -1,0 +1,4 @@
+Django==1.10.2
+django-hvad==1.6.0
+djangorestframework==3.4.7
+hashids==1.2.0
