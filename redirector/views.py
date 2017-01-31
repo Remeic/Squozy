@@ -9,6 +9,8 @@ from django.http import JsonResponse,HttpResponse
 from hashids import Hashids
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
+import requests
+
 # Create your views here.
 
 def create_shorturl(request):
@@ -27,8 +29,8 @@ def create_shorturl(request):
 
 
 def url_redirection(request, code):
-    obj_url=get_url(code)
-    if(obj_url!=None):
+    url_retrieved=get_url(code)
+    if(url_retrieved!=None):
         return redirect(url_retrieved.url)
     else:
         return render(request,'redirector/error.html')
@@ -62,4 +64,5 @@ def get_url(code):
         return UrlShrinked.objects.get(shrinked_code=code)
     except UrlShrinked.DoesNotExist:
         return None
+
 
