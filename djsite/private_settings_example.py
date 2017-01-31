@@ -1,0 +1,1 @@
+SALT_KEY = "Your salt key"

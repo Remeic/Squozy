@@ -19,7 +19,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
+#Add private_settings for variables
 
+SECRET_KEY = '8o6s119y7_nawwdk0mdm6u4)938q28chg2f6&eo45x3&$k#k8d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -118,12 +120,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/redirector/static/'
 
 
 
+import dj_database_url
+if os.getcwd() == "/app":
+    DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
+
+DEBUG = False
 
 try:
     from .local_settings import *
+except ImportError:
+    pass
+
+try:
+    from .private_settings import *
 except ImportError:
     print ("\n\nWARNING: No local_settings.py found! Please look at the README.md file!\n\n")
