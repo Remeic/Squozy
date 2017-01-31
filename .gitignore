@@ -3,6 +3,7 @@
 __pycache__
 enva
 db.sqlite3
-/static
 .DS_Store
+/djsite/private_settings.py
 /djsite/local_settings.py
+
