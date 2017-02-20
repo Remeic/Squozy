@@ -4,6 +4,5 @@ __pycache__
 enva
 db.sqlite3
 .DS_Store
-djsite/local_settings.py
-djsite/local_settings_example.pyc
+djsite/local_settings_example.py
 

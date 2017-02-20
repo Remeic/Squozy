@@ -77,27 +77,6 @@ WSGI_APPLICATION = 'djsite.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-NAME_DB= os.getenv('NAME_DB', 'Ringo')#take name from heroku dash
-USERNAME_DB= os.getenv('USERNAME_DB', 'George')#take name from heroku dash
-PASSWD_DB= os.getenv('PASSWD_DB', 'Paul')#take name from heroku dash
-HOST_DB= os.getenv('HOST_DB', 'John')#take name from heroku dash
-SALT_KEY = os.getenv('SALT_KEY', 'your_salt_key')
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': NAME_DB,
-        'USER': USERNAME_DB,
-        'PASSWORD': PASSWD_DB,
-        'HOST': HOST_DB,
-        'PORT': '5432',
-    }
-}
-
-DEBUG = True
-
-
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
@@ -150,6 +129,6 @@ DEBUG = False
 
 
 try:
-    from .private_settings import *
+    from .local_settings import *
 except ImportError:
     print ("\n\nWARNING: No local_settings.py found! Please look at the README.md file!\n\n")
