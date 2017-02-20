@@ -76,13 +76,6 @@ WSGI_APPLICATION = 'djsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -134,12 +127,8 @@ ALLOWED_HOSTS = ['*']
 
 DEBUG = False
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
 
 try:
-    from .private_settings import *
+    from .local_settings import *
 except ImportError:
     print ("\n\nWARNING: No local_settings.py found! Please look at the README.md file!\n\n")
