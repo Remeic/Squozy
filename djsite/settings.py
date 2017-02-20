@@ -76,6 +76,26 @@ WSGI_APPLICATION = 'djsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+NAME_DB= os.getenv('NAME_DB', 'Ringo')#take name from heroku dash
+USERNAME_DB= os.getenv('USERNAME_DB', 'George')#take name from heroku dash
+PASSWD_DB= os.getenv('PASSWD_DB', 'Paul')#take name from heroku dash
+HOST_DB= os.getenv('HOST_DB', 'John')#take name from heroku dash
+SALT_KEY = os.getenv('SALT_KEY', 'your_salt_key')
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': NAME_DB,
+        'USER': USERNAME_DB,
+        'PASSWORD': PASSWD_DB,
+        'HOST': HOST_DB,
+        'PORT': '5432',
+    }
+}
+
+DEBUG = False
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -113,8 +133,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/redirector/static/'
-
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 import dj_database_url
