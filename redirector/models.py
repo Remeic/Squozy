@@ -3,11 +3,12 @@ from django.utils import timezone
 from django.core.validators import URLValidator
 from hashids import Hashids
 from django.conf import settings
+from encrypted_model_fields.fields import EncryptedCharField
 
 hashids = Hashids(salt=settings.SALT_KEY, min_length=8)
 
 class UrlShrinked(models.Model):
-    url=models.URLField(max_length=200)
+    url=EncryptedCharField(validators=[URLValidator()], max_length=200)
     shrinked_code=models.CharField(max_length=30,unique=True,editable=False)
 
     def publish(self):
