@@ -23,6 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '8o6s119y7_nawwdk0mdm6u4)938q28chg2f6&eo45x3&$k#k8d'
 
+# This must be 32 keys base64 encoded
+FIELD_ENCRYPTION_KEY = os.environ.get('FIELD_ENCRYPTION_KEY', 'WUo5V1FxdGJNM0FUYjdoNDNQbndjM0hNMzlaQWRUeFo=')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'redirector',
+    'encrypted_model_fields',
 
 ]
 

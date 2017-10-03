@@ -10,3 +10,4 @@ six==1.10.0
 whitenoise==3.3.0
 psycopg2==2.6.2
 requests==2.9.1
+django-encrypted-model-fields==0.5.3
