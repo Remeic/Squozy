@@ -1,4 +1,7 @@
-### Squozy
+# Squozy
+
+[![forthebadge](http://forthebadge.com/images/badges/made-with-python.svg)](http://forthebadge.com)
+
 
 Squozy, it's all you need.
 It's a link shortner, simple, fast and secure.
